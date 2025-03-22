@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% include 'taha/_navbar.html' %} {% block content %}
+
+<div class="container mt-4 news-container" style="background-color: white">
+	<!-- style="background-color: aqua; height: 100vh; width: auto"  style="background-color: aqua" -->
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+			<li class="breadcrumb-item"><a href="#">Spor</a></li>
+			<li class="breadcrumb-item active" aria-current="page">{{ news_item.category }}</li>
+		</ol>
+	</nav>
+
+	<div class="container d-flex justify-content-center">
+		<div class="w-50">
+			<p style="opacity: 0.7">
+				<a href="" class="text-decoration-none text-dark">{{ news_item.category }}</a>
+				{{ news_item.date_published }}
+			</p>
+			<h3 class="news-title title">{{ news_item.title}}</h3>
+			<p class="news-parag mt-4" style="opacity: 0.8"><b>{{ news_item.description|truncatewords:15|safe }}</b></p>
+		</div>
+	</div>
+
+	<div class="d-flex justify-content-center">
+		<img src="{{ news_item.image.url }}" class="img-fluid object-fit-cover w-100 mt-4" alt="..." />
+	</div>
+
+	<div class="news-content-container container d-flex justify-content-center">
+		<div class="w-75">
+			<p class="mt-4 fs-20">{{ news_item.description|safe}}</p>
+		</div>
+	</div>
+
+	<div class="row mx-4 mt-4 news">
+		<h2>
+			İlgili Haberler
+			<i class="fa-solid fa-futbol"></i>
+		</h2>
+		<hr />
+
+		{% for related in related_news %}
+		<div class="col-12 col-md-3 mt-4">
+			<a href="{% url 'news_details' id=related.id %}" class="text-decoration-none text-dark">
+				<div class="card">
+					<img src="{{ related.image.url }}" class="card-img-top" alt="{{ related.title }}" />
+					<p>{{ related.category }}</p>
+					<h5 class="card-title">{{ related.title }}</h5>
+					<p class="card-text">{{ related.description|truncatewords:10|safe }}</p>
+					<p>{{ related.date_published }}</p>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+		
+	</div>
+</div>
+
+{% endblock %} {% include 'taha/_footer.html' %}

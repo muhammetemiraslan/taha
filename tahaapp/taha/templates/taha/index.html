@@ -1,0 +1,233 @@
+{% extends "base.html" %} {% load static %} {% block title %}Anasayfa - Taha{% endblock %}
+<!-- carousel -->
+
+{% block content %}
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide px-2 mt-2">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	</div>
+
+	<div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="10000">
+				<img src="{% static 'img/bayraktar_kizilelma.jpg' %}" class="d-block w-100 vh-100" alt="..." />
+				<div class="carousel-caption d-none d-md-block">
+					<h5>KIZILELMA</h5>
+					<p>BAYRAKTAR KIZILELMA HEDEFE DOĞRU İLERLİYOR.</p>
+				</div>
+			</div>
+			<div class="carousel-item" data-bs-interval="2000">
+				<img src="{% static 'img/aselsan_ertugrul.jpg' %}" class="d-block w-100 vh-100 object-fit-cover" alt="..." />
+				<div class="carousel-caption d-none d-md-block">
+					<h5>ERTUĞRUL</h5>
+					<p>Ertuğrul Bomba İmha Robotu bu zamana kadar binlerce şüpheli cisme müdahale ederek hayatlar kurtardı.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="{% static 'img/aselsan_koral.jpg' %}" class="d-block w-100 vh-100 object-fit-cover" alt="..." />
+				<div class="carousel-caption d-none d-md-block">
+					<h5>KORAL</h5>
+					<p>KARA PLATFORMUNDA UZAKTAN ED/ET SİSTEMİ.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+
+<!-- carousel end -->
+
+<br />
+
+<div class="row mx-2 mb-4">
+	<div class="col-12 col-md-8" style="height: 100vh">
+		<div class="banner mx-5">
+			<img src="/static/img/ataturkbanner2.png" alt="" />
+		</div>
+
+		<a href="">
+			<div class="card bg-dark text-white small-card mx-4 mt-4">
+				<img class="card-img" src="/static/img/newsBanner.jpg" alt="Card image" />
+				<div class="card-img-overlay">
+					<h5 class="card-title">Ukrayna</h5>
+					<p class="card-text">Russian forces strike military train with Ukrainian ammo, armament over past day Main Story</p>
+					<p class="card-text">Last updated 3 mins ago</p>
+				</div>
+			</div>
+		</a>
+	</div>
+
+	<div class="col-12 col-md-4 mt-4 position-relative" style="height: 100vh">
+		<div class="alert alert-dark alert-dismissible fade show position-absolute top-0 start-50 translate-middle-x shadow-lg p-3 rounded" role="alert" style="z-index: 100; margin-top: 10px; width: 280px">
+			<strong>Renkler!</strong>
+			Birinciye göre değişir.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+		<div class="container puandurumu scroll-container" style="background-color: white; width: 80%; overflow-y: auto; height: 100vh; border-radius: 15px">
+			<h6 class="text-center puandurumu-title"><strong>Türkiye Süper Ligi Puan Durumu</strong></h6>
+			<div class="dropdown">
+				<div class="row">
+					<div class="col">
+						<a class="btn btn-secondary dropdown-toggle text-dark bg-light mt-3" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">Türkiye</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+							<li><a class="dropdown-item" href="#">Azerbaycan</a></li>
+							<li><a class="dropdown-item" href="#">İspanya</a></li>
+							<li><a class="dropdown-item" href="#">İngiltere</a></li>
+						</ul>
+					</div>
+					<div class="col">
+						<a class="btn btn-secondary dropdown-toggle text-dark bg-light mt-3" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown" aria-expanded="false">Türkiye Süper Ligi</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+							<li><a class="dropdown-item" href="#">Ptt 1. Lig</a></li>
+							<li><a class="dropdown-item" href="#">Ptt 2. Lig</a></li>
+							<li><a class="dropdown-item" href="#">Ptt 3. Lig</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<span class="team-name-c">Galatasaray</span>
+					<span class="badge bg-dark rounded-pill">71</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-c">Fenerbahçe</span>
+					<span class="badge bg-dark rounded-pill">62</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-a">Samsunspor</span>
+					<span class="badge bg-dark rounded-pill">51</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-co">Beşiktaş</span>
+					<span class="badge bg-dark rounded-pill">44</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">38</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">14</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-l">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">-3</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-l">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">-3</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-l">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">-3</span>
+				</li>
+				<li class="list-group-item">
+					<span class="team-name-l">Lorem, ipsum.</span>
+					<span class="badge bg-dark rounded-pill">-3</span>
+				</li>
+			</ul>
+			<hr />
+		</div>
+	</div>
+</div>
+
+<!-- Content Second -->
+
+<div class="row mx-4 mt-4 mb-4 news">
+	<h2>
+		Politika
+		<i class="fa-solid fa-landmark"></i>
+	</h2>
+	<hr />
+	
+	{% for news in news_items %}
+	<div class="col-12 col-md-3 mt-4">
+		<a href="{% url 'news_details' id=news.id %}" class="text-decoration-none text-dark">
+			<div class="card">
+				<img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.title }}" />
+				<p>{{ news.category }}</p>
+				<h5 class="card-title">{{ news.title }}</h5>
+				<p class="card-text">{{ news.description|truncatewords:10|safe }}</p>
+				<p>{{ news.date_published }}</p>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+
+</div>
+
+<div class="row mx-4 mt-4 mb-4 news">
+	<h2>
+		Spor
+		<i class="fa-solid fa-futbol"></i>
+	</h2>
+	<hr />
+
+	{% for news in news_items_sports %}
+	<div class="col-12 col-md-3 mt-4">
+		<a href="{% url 'news_details' id=news.id %}" class="text-decoration-none">
+			<div class="card">
+				<img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.title }}" />
+				<br />
+				<p>{{news.category}}</p>
+				<h5 class="card-title">{{news.title}}</h5>
+				<p class="card-text">{{news.description|truncatewords:10|safe}}</p>
+				<p>{{ news.date_published }}</p>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
+
+<!-- Content End -->

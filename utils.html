@@ -1,0 +1,12 @@
+{% for news in news_items %}
+<div class="col-12 col-md-3 mt-4">
+	<div class="card">
+		<img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.title }}" />
+		<p>{{ news.category }}</p>
+		<h5 class="card-title">{{ news.title }}</h5>
+		<p class="card-text" style="margin: 0;">{{ news.description|truncatewords:10|safe }}</p>
+		<p>{{ news.date_published }}</p>
+	</div>
+</div>
+{% endfor %}
+</div>

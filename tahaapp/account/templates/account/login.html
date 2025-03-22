@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% include 'taha/_navbar.html' %}
+
+{% block content %}
+
+<div class="row mx-4 mt-4 mb-4">
+	<div class="col-12 col-md-5 mb-4">
+		<h1>TAHA</h1>
+		<div class="login-title">
+			<br />
+			<br />
+			<h4>TÜRKİYE ANA HABER AJANSINA HOŞ GELDİNİZ</h4>
+			<br />
+		</div>
+		<br />
+		<div class="login-title-2">
+			<h5>TAHA KULLANICI GİRİŞ EKRANI</h5>
+		</div>
+		<div class="box"></div>
+		<br />
+		<form class="form" action="{% url 'login' %}" method="POST">
+			{% csrf_token %}
+			{% if error %}
+				<div class="alert alert-danger">
+					{{error}}
+				</div>
+			{% endif %}
+			<div class="mb-3">
+				<label for="username" class="form-label para">username</label>
+				<input type="text" class="form-control" name="username"/>
+
+
+				{% comment %} <div id="emailHelp" class="form-text para">E-postanızı asla başkalarıyla paylaşmayacağız.</div> {% endcomment %}
+			</div>
+			<div class="mb-3">
+				<label for="password" class="form-label para">Şifre</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="password"/>
+			</div>
+
+			<div class="mb-3 form-check d-flex align-items-center justify-content-between">
+				<div>
+					<input type="checkbox" class="form-check-input" id="exampleCheck1" />
+					<label class="form-check-label para" for="exampleCheck1">Beni Hatırla</label>
+				</div>
+				<a href="#" class="text-primary text-decoration-none text-dark">Şifremi Unuttum?</a>
+			</div>
+
+			<button type="submit" value="Login" class="btn btn-outline-dark para">Giriş</button>
+		</form>
+	</div>
+
+	<div class="col-12 col-md-7 text-end login-img">
+		<img src="/static/img/ATATURK.jpg" class="img-fluid" alt="" />
+	</div>
+</div>
+
+{% endblock %}
+
+{% include 'taha/_footer.html' %}
+

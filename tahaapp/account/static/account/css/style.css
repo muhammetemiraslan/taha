@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Noto Serif', serif;
+}
+
+.login-title {
+    background-color: #000000;
+    height: 2.5rem;
+    color: #f8f8ff;
+    text-align: center;
+    line-height: 3px;
+}
+
+.login-title-2 {
+    background-color: #007bff;
+    height: 1.5rem;
+    color: #f8f8ff;
+    line-height: 1.5rem;
+    width: 58%;
+    text-align: center;
+    line-height: 15px;
+}
+
+h4, h5{
+    font-weight: 56rem;
+}
+
+h1 {
+    /* font-family: 'Gantari', sans-serif; */
+    font-weight: 43rem;
+}
+
+.box {
+    background-color: #007bff;
+    height: 1rem;
+    width: 2rem;
+}
+
+.login-img img{
+    height: 88%;
+}
+
+.form-control {
+    height: 50px;
+    border: 1px solid #000000;
+} 
+
+.form-check-input {
+    border: 1px solid #000000;
+}
+
+.btn {
+    height: 50px;
+}

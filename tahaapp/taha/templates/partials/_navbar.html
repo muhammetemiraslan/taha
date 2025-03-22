@@ -1,0 +1,71 @@
+<!-- Top Navbar -->
+<div class="top-navbar text-center">
+	<span>💲 USD/TRY: {{ usd_to_try }} | 💶 EUR/TRY: {{ eur_to_try }}</span>
+</div>
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-sticky mx-auto mt-2">
+	<div class="container-fluid">
+		<a class="navbar-brand ms-4" href="{% url 'home' %}">TAHA</a>
+
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="{% url 'home' %}">ANASAYFA</a>
+				</li>
+
+				<li class="nav-item dropdown" style="width: 130px">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">HABERLER</a>
+
+					<ul class="dropdown-menu">
+						<h6 class="dropdown-item">Haber Başlıkları</h6>
+						<li><hr class="dropdown-divider" /></li>
+						<li><a class="dropdown-item" href="#">Gündem</a></li>
+						<li><a class="dropdown-item" href="#">Dünya</a></li>
+						<li><a class="dropdown-item" href="#">Ekonomi</a></li>
+						<li><a class="dropdown-item" href="#">Spor</a></li>
+						<li><a class="dropdown-item" href="#">Kültür</a></li>
+						<li><hr class="dropdown-divider" /></li>
+						<li>
+							<a class="dropdown-item" href="#">Daha Fazlası</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="https://teyit.org/">TEYİT</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="#">HAKKIMIZDA</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="#">İLETİŞİM</a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				{% if user.is_authenticated %}
+					<li class="nav-item">
+						<a class="nav-link me-4" href="{% url 'register' %}">ÇIKIŞ YAP</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link me-4 disable" href="">HOŞGELDİNİZ,</a>
+					</li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'login' %}">GİRİŞ YAP</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link me-4" href="{% url 'register' %}">KAYIT OL</a>
+					</li>
+				{% endif %}
+
+			</ul>
+		</div>
+	</div>
+</nav>
+<!-- navbar end -->
