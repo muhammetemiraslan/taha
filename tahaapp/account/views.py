@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 import requests
 
@@ -25,6 +25,9 @@ def get_exchange_rates():
 
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect("home")
+    
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -52,6 +55,8 @@ def login_view(request):
 
 
 def register_view(request):
+    if request.user.is_authenticated:
+        return redirect("home")
 
     if request.method == "POST":
         username = request.POST["username"]
@@ -120,3 +125,7 @@ def register_view(request):
             "eur_to_try": eur_to_try,
         },
     )
+
+def logout_view(request):
+    logout(request)
+    return redirect("home")

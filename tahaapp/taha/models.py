@@ -23,3 +23,27 @@ class News(models.Model):
     
     def __str__(self):
         return self.title
+    
+
+class AboutContent(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='about_images/') 
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
+    
+class AboutContent(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='about_images/')
+    description = RichTextField()
+    category = models.ForeignKey('Category', related_name="contents", on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name

@@ -10,6 +10,24 @@ body {
 
 }
 
+.nav-item.dropdown {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-link.dropdown-toggle {
+    width: auto;
+    text-align: left;
+}
+
+.dropdown-menu {
+    text-align: left;
+}
+
+.dropdown-item {
+    text-align: left;
+}
+
 .row {
     margin-bottom: 20px;
 }
@@ -27,6 +45,13 @@ body {
     z-index: 1020;
     background: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-collapse.collapse.show {
+    background-color: white !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 p,
@@ -73,6 +98,7 @@ h6 {
     margin: 0;
     padding: 0;
 }
+
 
 .height-card {
     height: 3rem;
@@ -124,17 +150,14 @@ h6 {
 
 .scroll-container::-webkit-scrollbar {
     width: 8px;
-    /* Kaydırma çubuğu genişliği */
 }
 
-/* Kaydırma çubuğu arkaplanı */
+
 .scroll-container::-webkit-scrollbar-track {
     background: #f0f0f0;
-    /* Arka plan rengi */
     border-radius: 10px;
 }
 
-/* Kaydırma çubuğu kısmı */
 .scroll-container::-webkit-scrollbar-thumb {
     background: linear-gradient(100deg, #ff0000, #dbff00);
     border-radius: 10px;

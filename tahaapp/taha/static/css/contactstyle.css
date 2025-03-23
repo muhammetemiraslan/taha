@@ -1,0 +1,23 @@
+.container-content {
+    margin: 50px;
+}
+
+.container-contact {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-group {
+    height: 100px;
+    border-radius: 0;
+    display: flex;
+
+}
+
+.list-group-item {
+    height: 5rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    display: flex; 
+    align-items: center;
+}

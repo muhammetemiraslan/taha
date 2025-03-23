@@ -6,4 +6,5 @@ urlpatterns = [
     path("account/", include("account.urls")),
     # path('news/details/', views.news_details, name='news_details'),
     path('news/details/<int:id>/', views.news_details, name='news_details'),
+    path('about',views.about, name="about"),
 ]
