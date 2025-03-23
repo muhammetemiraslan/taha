@@ -22,7 +22,7 @@
 					<a class="nav-link" aria-current="page" href="https://teyit.org/">TEYİT</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{% url 'about' %}">HAKKIMIZDA</a>
+					<a class="nav-link" aria-current="page" href="{% url 'filtered_about' 4 %}">HAKKIMIZDA</a>
 				</li>
 
 				<li class="nav-item dropdown">
@@ -38,7 +38,7 @@
 						<li><a class="dropdown-item" href="#">Kültür</a></li>
 						<li><hr class="dropdown-divider" /></li>
 						<li>
-							<a class="dropdown-item" href="#">Daha Fazlası</a>
+							<a class="dropdown-item" href="{% url 'allnews' %}">Daha Fazlası</a>
 						</li>
 					</ul>
 				</li>

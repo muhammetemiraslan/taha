@@ -41,27 +41,36 @@ def home(request):
     )
 
 
-# def about(request):
-#     about_content = AboutContent.objects.all()
-#     categories = Category.objects.all()
-#     return render(request, "taha/about.html", 
-#     {
-#         'about_content': about_content,
-#         'categories': categories
-#     })
-    
+def allnews(request):
+    usd_to_try, eur_to_try = get_exchange_rates()
+    allnews = News.objects.all().order_by("category")
+
+    grouped_news = {}
+    for news in allnews:
+        if news.category not in grouped_news:
+            grouped_news[news.category] = []
+        grouped_news[news.category].append(news)
+
+    return render(request, "taha/allnews.html", {"grouped_news": grouped_news,"usd_to_try": usd_to_try,"eur_to_try": eur_to_try,})
+
+
 def about(request, category_id=None):
     if category_id:
         about_content = AboutContent.objects.filter(category_id=category_id)
     else:
         about_content = AboutContent.objects.all()
-    
+
     categories = Category.objects.all()
-    return render(request, 'about.html', {
-        'about_content': about_content,
-        'categories': categories,
-        'category_id': category_id,
-    })
+    return render(
+        request,
+        "about.html",
+        {
+            "about_content": about_content,
+            "categories": categories,
+            "category_id": category_id,
+        },
+    )
+
 
 def news_details(request, id):
     # if not request.user.is_authenticated: ##sadece login olanların görebiliceği kısım
@@ -93,4 +102,3 @@ def news_view(request):
         news_by_category[category] = News.objects.filter(category=category)
 
     return render(request, "taha/index.html", {"news_by_category": news_by_category})
-

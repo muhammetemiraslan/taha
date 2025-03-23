@@ -16,12 +16,9 @@ admin.site.register(News, NewsAdmin)
 
 
 class AboutContentAdmin(admin.ModelAdmin):
-    list_display = (
-        "title",
-        "category",
-        "image",
-    )  # Admin panelinde hangi alanların görünmesini istediğiniz
-    list_filter = ("category",)  # Kategorilere göre filtreleme yapabilmek için
+    list_display = ("title","category","image","slug")
+    list_filter = ("category",)
+    readonly_fields = ("slug",)
 
 
 admin.site.register(Category)

@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% load static %} {% block title %}Anasayfa - Taha{% endblock %}
+<!-- carousel -->
+
+{% block content %}
+
+<div class="container">
+    <div class="allnews-container mt-4">
+        {% for category, news_list in grouped_news.items %}
+        <h3><strong>{{ category }}</strong></h3>  <!-- Kategori ismi -->
+        <hr />
+        <div class="row allnews-container-items">
+            {% for news in news_list %}
+            <div class="col-12 col-md-3 mt-4">
+                <a href="{% url 'news_details' id=news.id %}" class="text-decoration-none">
+                    <div class="card">
+                        <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.title }}" />
+                        <br />
+                        <p>{{ news.category }}</p>
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text">{{ news.description|truncatewords:10|safe }}</p>
+                        <p>{{ news.date_published }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
