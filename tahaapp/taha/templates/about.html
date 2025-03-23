@@ -4,11 +4,11 @@
 	<div class="row mb-4">
 		<div class="col-12 col-md-9" style="height: auto">
 			<div class="container-content">
-				{% for content in about_content %}
-				<h1 class="mb-4">{{ content.title }}</h1>
-				<p class="h4 mb-4">{{ content.description|safe }}</p>				
-				{% endfor %}
-			</div>  
+                {% for content in about_content %}
+                <h1 class="mb-4">{{ content.title }}</h1>
+                <p class="h4 mb-4">{{ content.description|safe }}</p>
+                {% endfor %}
+            </div>
 		</div>
 
 		{% include 'partials/_list.html' %}

@@ -41,15 +41,27 @@ def home(request):
     )
 
 
-def about(request):
-    about_content = AboutContent.objects.all()
-    categories = Category.objects.all()
-    return render(request, "taha/about.html", 
-    {
-        'about_content': about_content,
-        'categories': categories
-    })
+# def about(request):
+#     about_content = AboutContent.objects.all()
+#     categories = Category.objects.all()
+#     return render(request, "taha/about.html", 
+#     {
+#         'about_content': about_content,
+#         'categories': categories
+#     })
     
+def about(request, category_id=None):
+    if category_id:
+        about_content = AboutContent.objects.filter(category_id=category_id)
+    else:
+        about_content = AboutContent.objects.all()
+    
+    categories = Category.objects.all()
+    return render(request, 'about.html', {
+        'about_content': about_content,
+        'categories': categories,
+        'category_id': category_id,
+    })
 
 def news_details(request, id):
     # if not request.user.is_authenticated: ##sadece login olanların görebiliceği kısım
